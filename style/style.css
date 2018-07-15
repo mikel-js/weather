@@ -13,6 +13,7 @@ td:first-of-type, td:first-of-type > div {
 }
 
 .placehold {
-    width: 33%
+    width: 300px;
+    font-size: 1em
 }
   
