@@ -48,6 +48,5 @@ function mapStateToProps(state) {
     return {weather: state.weather} 
 }
 
-// weather sya kasi weather yung nsa index js reducer
 
 export default connect(mapStateToProps)(WeatherList)

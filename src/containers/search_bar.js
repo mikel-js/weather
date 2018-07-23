@@ -12,8 +12,6 @@ class SearchBar extends Component {
         this.onInputChange = this.onInputChange.bind(this)
         this.onInputChanges = this.onInputChanges.bind(this)
         this.onFormSUbmit = this.onFormSUbmit.bind(this)
-        // yung onChange s bba me 'this' tpos yung fxn e me 'this' dn
-        // so dpt ibind yung this para ndi mging undefined
     }
 
     onInputChange(e) {
@@ -30,7 +28,6 @@ class SearchBar extends Component {
         if(!this.state){
             alert('error occured')
         }
-        // now we fetch data
         this.props.fetchWeather(this.state.city, this.state.country)
         this.setState({city: '', country:''})
         console.log(this.state)
@@ -44,7 +41,6 @@ class SearchBar extends Component {
                   value={this.state.city}
                   onChange={this.onInputChange}
                   className='placehold'
-                //   onChange={(e)=>{this.setState({city: e.target.value})}}
                 />
                 <input 
                   placeholder='Enter Country Abbreviation(eg. FI)'
@@ -63,10 +59,6 @@ class SearchBar extends Component {
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({ fetchWeather }, dispatch)
 }
-// magkkaroon n ng this.props.fetchWeather kasi me bind s taas
-// this hook the action creator to searchBar container
-// dipatch assure that the action flows to middleware then to reducer
 
 export default connect(null, mapDispatchToProps)(SearchBar)
-// pag nagpapasa ng argument to mapdispatchtoprops, it needs to be the 2nd
-// argument
+
